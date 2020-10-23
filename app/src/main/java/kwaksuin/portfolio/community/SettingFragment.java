@@ -95,6 +95,7 @@ public class SettingFragment extends Fragment {
             }
         });
 
+
         requestDialog.setNegativeButton(buttonNO, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
