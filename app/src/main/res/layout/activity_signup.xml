@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/container"
+    tools:context=".SignUp">
+
+    <TextView
+        android:id="@+id/appTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="愛견"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:id="@+id/subTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="반려견 주인들을 위한 커뮤니티"
+        android:textColor="#000000"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/singupTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="회원가입"
+        android:textSize="40sp"
+        android:textColor="#000000"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:hint="이메일을 입력하세요."
+            android:inputType="textEmailAddress"
+            android:textColor="#000000"
+            android:textColorHint="@color/cardview_shadow_start_color"/>
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="비밀번호를 입력하세요."
+            android:inputType="textPassword"
+            android:textColor="#000000"
+            android:textColorHint="@color/cardview_shadow_start_color"/>
+
+        <EditText
+        android:id="@+id/Repassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="비밀번호를 한번 더 입력하세요."
+        android:inputType="textPassword"
+        android:textColor="#000000"
+        android:textColorHint="@color/cardview_shadow_start_color"/>
+
+        <EditText
+            android:id="@+id/nickname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="사용할 이름을 입력하세요."
+            android:maxLength="8"
+            android:textColor="#000000"
+            android:textColorHint="@color/cardview_shadow_start_color"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/signupButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_login"
+        android:enabled="true"
+        android:text="가입하기"
+        android:textColor="#000000"/>
+
+
+</LinearLayout>
