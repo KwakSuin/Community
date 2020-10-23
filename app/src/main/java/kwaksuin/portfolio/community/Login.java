@@ -52,8 +52,6 @@ public class Login extends AppCompatActivity {
                     startActivityForResult(intent,LOGIN_CODE_MAIN);
 
                 }
-
-
             }
         });
 

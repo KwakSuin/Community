@@ -1,5 +1,7 @@
 package kwaksuin.portfolio.community;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -63,14 +65,43 @@ public class SettingFragment extends Fragment {
         dropId.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                request();
+            }
+        });
+        return rootView;
+    }
+
+    // 탈퇴 확인 박스 띄우기
+    private void request(){
+        String title = "주의";
+        String message = "탈퇴 하시겠습니까?";
+        String buttonYES = "예";
+        String buttonNO = "돌아가기";
+
+        AlertDialog dialog = makeRequestDialog(title, message, buttonYES, buttonNO);
+        dialog.show();
+    }
+
+    private AlertDialog makeRequestDialog(CharSequence title, CharSequence message, CharSequence buttonYES, CharSequence buttonNO){
+        AlertDialog.Builder requestDialog = new AlertDialog.Builder(getContext());
+        requestDialog.setTitle(title);
+        requestDialog.setMessage(message);
+        requestDialog.setPositiveButton(buttonYES, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
                 Intent intent = new Intent(getActivity(),Login.class);
                 Toast.makeText(getContext(),"탈퇴가 완료되었습니다.",Toast.LENGTH_SHORT).show();
                 startActivity(intent);
             }
         });
 
+        requestDialog.setNegativeButton(buttonNO, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
 
+            }
+        });
 
-        return rootView;
+        return requestDialog.create();
     }
 }

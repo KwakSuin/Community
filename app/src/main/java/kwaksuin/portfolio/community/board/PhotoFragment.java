@@ -48,9 +48,9 @@ public class PhotoFragment extends Fragment {
         adapter = new PhotoAdapter();
 
         adapter.addItem(new Photo("안녕하세요", "2020-01-01", 7,  R.drawable.dog));
-        adapter.addItem(new Photo("모모와 코코", "2020-02-02", 19,  R.drawable.dog));
-        adapter.addItem(new Photo("우리집 강아지", "2020-03-03", 16,  R.drawable.dog));
-        adapter.addItem(new Photo("귀여워", "2020-04-04", 16, R.drawable.dog));
+        adapter.addItem(new Photo("모모와 코코", "2020-02-02", 19,  R.drawable.dog02));
+        adapter.addItem(new Photo("우리집 강아지", "2020-03-03", 16,  R.drawable.dog03));
+        adapter.addItem(new Photo("귀여워", "2020-04-04", 16, R.drawable.dog04));
 
         // 리사이클에 adapter 기능 넣기
         recyclerView.setAdapter(adapter);
