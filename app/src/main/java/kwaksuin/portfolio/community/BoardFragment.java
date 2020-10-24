@@ -1,7 +1,6 @@
 package kwaksuin.portfolio.community;
 
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -14,8 +13,8 @@ import com.google.android.material.tabs.TabLayout;
 
 import kwaksuin.portfolio.community.board.FreeFragment;
 import kwaksuin.portfolio.community.board.MarketFragment;
-import kwaksuin.portfolio.community.board.PhotoFragment;
-import kwaksuin.portfolio.community.board.QuestFragment;
+import kwaksuin.portfolio.community.board.photo.PhotoFragment;
+import kwaksuin.portfolio.community.board.quest.QuestFragment;
 
 
 public class BoardFragment extends Fragment  {

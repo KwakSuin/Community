@@ -1,23 +1,13 @@
 package kwaksuin.portfolio.community;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.tabs.TabLayout;
-
-import kwaksuin.portfolio.community.board.FreeFragment;
-import kwaksuin.portfolio.community.board.MarketFragment;
-import kwaksuin.portfolio.community.board.PhotoFragment;
-import kwaksuin.portfolio.community.board.QuestFragment;
-import kwaksuin.portfolio.community.R;
 
 public class Category extends AppCompatActivity {
     HomeFragment category01;    // 홈화면

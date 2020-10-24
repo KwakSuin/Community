@@ -1,4 +1,4 @@
-package kwaksuin.portfolio.community.board;
+package kwaksuin.portfolio.community.board.photo;
 
 import android.view.LayoutInflater;
 import android.view.View;

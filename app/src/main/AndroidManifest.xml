@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".board.Photo"
+        <activity android:name=".board.photo.Photo"
             tools:ignore="Instantiatable"></activity>
         <activity android:name=".Category" />
         <activity android:name=".SignUp" />

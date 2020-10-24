@@ -1,4 +1,4 @@
-package kwaksuin.portfolio.community.board;
+package kwaksuin.portfolio.community.board.quest;
 
 import android.os.Bundle;
 
