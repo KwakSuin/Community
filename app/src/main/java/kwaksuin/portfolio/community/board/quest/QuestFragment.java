@@ -3,14 +3,13 @@ package kwaksuin.portfolio.community.board.quest;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.appcompat.widget.Toolbar;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TableLayout;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import com.google.android.material.tabs.TabLayout;
 import com.pedro.library.AutoPermissions;

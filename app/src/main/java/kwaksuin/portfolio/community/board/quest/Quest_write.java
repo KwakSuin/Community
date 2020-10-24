@@ -26,18 +26,18 @@ public class Quest_write extends Fragment {
     public void onAttach(Context context) {
         super.onAttach(context);
 
-        callback = (OnDatabaseCallback) getActivity();
+        callback = (OnDatabaseCallback)getActivity();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.quest_write, container, false);
 
-        questWrite_title = (EditText) rootView.findViewById(R.id.questWrite_title);
-        questWrite_name = (EditText) rootView.findViewById(R.id.questWrite_name);
-        questWrite_content = (EditText) rootView.findViewById(R.id.questWrite_contents);
+        questWrite_title = rootView.findViewById(R.id.questWrite_title);
+        questWrite_name =  rootView.findViewById(R.id.questWrite_name);
+        questWrite_content = rootView.findViewById(R.id.questWrite_contents);
 
-        Button button = (Button) rootView.findViewById(R.id.button);
+        Button button = rootView.findViewById(R.id.questWrite_button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,7 +45,7 @@ public class Quest_write extends Fragment {
                 String name = questWrite_name.getText().toString();
                 String contents = questWrite_content.getText().toString();
 
-                callback.insert(name, name, contents);
+                callback.insert(title, name, contents);
                 Toast.makeText(getContext(), "게시글을 추가했습니다.", Toast.LENGTH_LONG).show();
             }
         });
