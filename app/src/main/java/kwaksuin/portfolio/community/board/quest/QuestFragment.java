@@ -42,14 +42,16 @@ public class QuestFragment extends Fragment implements OnDatabaseCallback, AutoP
 
         getFragmentManager().beginTransaction().replace(R.id.container,write).commit();
 
-        TableLayout tabs = rootView.findViewById(R.id.tabs);
-        //tabs.addTab(tabs.newTab().setText("입력"));
-        //tabs.addTab(tabs.newTab().setText("조회"))
+        TabLayout tabs = rootView.findViewById(R.id.tabs);
+        tabs.addTab(tabs.newTab().setText("입력"));
+        tabs.addTab(tabs.newTab().setText("목록"));
+
+
         tabs.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 int position = tab.getPosition();
-                Log.d("MainActivity", "선택된 탭 : " + position);
+                Log.d("QuestFragment", "선택된 탭 : " + position);
 
                 Fragment selected = null;
                 if (position == 0) {
@@ -61,11 +63,13 @@ public class QuestFragment extends Fragment implements OnDatabaseCallback, AutoP
                 getFragmentManager().beginTransaction().replace(R.id.container, selected).commit();
             }
 
+
             @Override
             public void onTabUnselected(TabLayout.Tab tab) { }
 
             @Override
             public void onTabReselected(TabLayout.Tab tab) { }
+
         });
 
         // open database

@@ -38,7 +38,7 @@
                 app:tabTextColor="@color/colorPrimary"
                 app:tabSelectedTextColor="@color/colorAccent"
                 android:elevation="1dp"
-                android:background="@android:color/background_light" />
+                android:background="@android:color/background_light"/>
 
         </com.google.android.material.appbar.AppBarLayout>
 
