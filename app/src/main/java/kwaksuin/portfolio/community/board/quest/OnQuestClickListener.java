@@ -1,4 +1,7 @@
 package kwaksuin.portfolio.community.board.quest;
 
-interface OnQuestClickListener {
+import android.view.View;
+
+public interface OnQuestClickListener {
+    public void onQuestClick(QuestAdapter.ViewHolder holder, View view, int position);
 }
