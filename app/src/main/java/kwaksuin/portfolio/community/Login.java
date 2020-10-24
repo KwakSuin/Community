@@ -10,14 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.toolbox.Volley;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import kwaksuin.portfolio.community.request.LoginRequest;
+import kwaksuin.portfolio.community.R;
 
 public class Login extends AppCompatActivity {
     public static final int LOGIN_CODE_MAIN = 10;

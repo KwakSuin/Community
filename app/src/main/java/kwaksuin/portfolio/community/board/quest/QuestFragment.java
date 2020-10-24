@@ -3,7 +3,6 @@ package kwaksuin.portfolio.community.board.quest;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.appcompat.widget.Toolbar;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -22,8 +21,6 @@ import kwaksuin.portfolio.community.R;
 public class QuestFragment extends Fragment implements OnDatabaseCallback, AutoPermissionsListener {
     private static final String TAG ="QuestFragment";
 
-    Toolbar toolbar;
-
     Quest_write write;
     Quest_list list;
 
@@ -34,8 +31,6 @@ public class QuestFragment extends Fragment implements OnDatabaseCallback, AutoP
                              Bundle savedInstanceState) {
 
         final ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_quest,container,false);
-
-        toolbar = rootView.findViewById(R.id.toolbar);
         write = new Quest_write();
         list = new Quest_list();
 
@@ -44,7 +39,6 @@ public class QuestFragment extends Fragment implements OnDatabaseCallback, AutoP
         TabLayout tabs = rootView.findViewById(R.id.tabs);
         tabs.addTab(tabs.newTab().setText("입력"));
         tabs.addTab(tabs.newTab().setText("목록"));
-
 
         tabs.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -59,7 +53,7 @@ public class QuestFragment extends Fragment implements OnDatabaseCallback, AutoP
                     selected = list;
                 }
 
-                getFragmentManager().beginTransaction().replace(R.id.container, selected).commit();
+                getFragmentManager().beginTransaction().replace(R.id.quest_container, selected).commit();
             }
 
 

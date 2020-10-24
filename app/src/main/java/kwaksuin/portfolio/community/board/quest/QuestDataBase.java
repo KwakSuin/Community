@@ -8,11 +8,11 @@ import android.util.Log;
 
 import java.util.ArrayList;
 
-class QuestDataBase {
+public class QuestDataBase {
     /**
      * TAG for debugging
      */
-    public static final String TAG = "QuestDatabase";
+    public static final String TAG = "QuestDataBase";
 
     /**
      * Singleton instance
@@ -26,7 +26,7 @@ class QuestDataBase {
     public static String DATABASE_NAME = "quest.db";
 
     /**
-     * table name for BOOK_INFO
+     * table name for QUEST_INFO
      */
     public static String TABLE_QUEST_INFO = "QUEST_INFO";
 
@@ -88,13 +88,6 @@ class QuestDataBase {
         database = null;
     }
 
-    /**
-     * execute raw query using the input SQL
-     * close the cursor after fetching any result
-     *
-     * @param SQL
-     * @return
-     */
     public Cursor rawQuery(String SQL) {
         println("\nexecuteQuery called.\n");
 

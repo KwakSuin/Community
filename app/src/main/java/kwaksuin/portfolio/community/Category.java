@@ -15,6 +15,7 @@ public class Category extends AppCompatActivity {
     ProfileFragment category03; // 프로필
     SettingFragment category04; // 설정
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +39,7 @@ public class Category extends AppCompatActivity {
 
                         return true;
                     case R.id.board:    // 게시판 아이콘
-                                                Toast.makeText(getApplicationContext(),"게시판입니다.",Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(),"게시판입니다.",Toast.LENGTH_LONG).show();
                         getSupportFragmentManager().beginTransaction().replace(R.id.container,category02).commit();
 
                         return true;

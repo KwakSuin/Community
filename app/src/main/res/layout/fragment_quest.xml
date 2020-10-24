@@ -16,18 +16,6 @@
             android:layout_height="wrap_content"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-            <!-- // Toolbar layout for actionbar -->
-            <androidx.appcompat.widget.Toolbar
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/colorPrimaryDark"
-                android:theme="@style/ThemeOverlay.AppCompat.Dark"
-                android:elevation="1dp"
-                android:id="@+id/toolbar"
-                >
-
-            </androidx.appcompat.widget.Toolbar>
-
             <!-- // Tab buttons -->
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tabs"
