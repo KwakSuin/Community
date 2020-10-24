@@ -48,7 +48,7 @@ public class Quest_list extends Fragment {
 
         adapter.setOnItemClickListener(new OnQuestClickListener() {
             @Override
-            public void onItemClick(QuestAdapter.ViewHolder holder, View view, int position) {
+            public void onQuestClick(QuestAdapter.ViewHolder holder, View view, int position) {
                 QuestInfo item = adapter.getItem(position);
 
                 Toast.makeText(getContext(), "게시글 선택됨 : " + item.getName(), Toast.LENGTH_LONG).show();

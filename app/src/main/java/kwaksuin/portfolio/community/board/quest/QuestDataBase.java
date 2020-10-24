@@ -28,7 +28,7 @@ class QuestDataBase {
     /**
      * table name for BOOK_INFO
      */
-    public static String TABLE_BOOK_INFO = "QUEST_INFO";
+    public static String TABLE_QUEST_INFO = "QUEST_INFO";
 
     /**
      * version
@@ -133,10 +133,10 @@ class QuestDataBase {
 
         public void onCreate(SQLiteDatabase _db) {
             // TABLE_QUEST_INFO
-            println("creating table [" + TABLE_BOOK_INFO + "].");
+            println("creating table [" + TABLE_QUEST_INFO + "].");
 
             // drop existing table
-            String DROP_SQL = "drop table if exists " + TABLE_BOOK_INFO;
+            String DROP_SQL = "drop table if exists " + TABLE_QUEST_INFO;
             try {
                 _db.execSQL(DROP_SQL);
             } catch(Exception ex) {
@@ -182,7 +182,7 @@ class QuestDataBase {
 
         private void insertRecord(SQLiteDatabase _db, String title, String name, String contents) {
             try {
-                _db.execSQL( "insert into " + TABLE_BOOK_INFO + "(TITLE, NAME, CONTENTS) values ('" + title + "', '" + name + "', '" + contents + "');" );
+                _db.execSQL( "insert into " + TABLE_QUEST_INFO + "(TITLE, NAME, CONTENTS) values ('" + title + "', '" + name + "', '" + contents + "');" );
             } catch(Exception ex) {
                 Log.e(TAG, "Exception in executing insert SQL.", ex);
             }
@@ -192,7 +192,7 @@ class QuestDataBase {
 
     public void insertRecord(String title, String name, String contents) {
         try {
-            db.execSQL( "insert into " + TABLE_BOOK_INFO + "(NAME, AUTHOR, CONTENTS) values ('" + title + "', '" + name + "', '" + contents + "');" );
+            db.execSQL( "insert into " + TABLE_QUEST_INFO + "(NAME, AUTHOR, CONTENTS) values ('" + title + "', '" + name + "', '" + contents + "');" );
         } catch(Exception ex) {
             Log.e(TAG, "Exception in executing insert SQL.", ex);
         }
@@ -202,7 +202,7 @@ class QuestDataBase {
         ArrayList<QuestInfo> result = new ArrayList<QuestInfo>();
 
         try {
-            Cursor cursor = db.rawQuery("select TITLE, NAME, CONTENTS from " + TABLE_BOOK_INFO, null);
+            Cursor cursor = db.rawQuery("select TITLE, NAME, CONTENTS from " + TABLE_QUEST_INFO, null);
             for (int i = 0; i < cursor.getCount(); i++) {
                 cursor.moveToNext();
                 String title = cursor.getString(0);

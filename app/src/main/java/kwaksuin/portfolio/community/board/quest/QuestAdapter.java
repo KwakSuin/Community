@@ -68,17 +68,17 @@ public class QuestAdapter extends RecyclerView.Adapter<QuestAdapter.ViewHolder>
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView textView;
-        TextView textView2;
-        TextView textView3;
+        TextView quest_title;
+        TextView quest_name;
+        TextView quest_content;
         ImageView imageView;
 
         public ViewHolder(View itemView, final OnQuestClickListener listener) {
             super(itemView);
 
-            textView = itemView.findViewById(R.id.textView);
-            textView2 = itemView.findViewById(R.id.textView2);
-            textView3 = itemView.findViewById(R.id.textView3);
+            quest_title = itemView.findViewById(R.id.quest_title);
+            quest_name = itemView.findViewById(R.id.quest_name);
+            quest_content = itemView.findViewById(R.id.quest_contents);
             imageView = itemView.findViewById(R.id.imageView);
 
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -94,9 +94,9 @@ public class QuestAdapter extends RecyclerView.Adapter<QuestAdapter.ViewHolder>
         }
 
         public void setItem(QuestInfo item) {
-            textView.setText(item.getTitle());
-            textView2.setText(item.getName());
-            textView3.setText(item.getContents());
+            quest_title.setText(item.getTitle());
+            quest_name.setText(item.getName());
+            quest_content.setText(item.getContents());
         }
 
     }
