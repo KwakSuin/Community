@@ -30,7 +30,7 @@ public class BoardFragment extends Fragment  {
                              Bundle savedInstanceState) {
         final ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_board,container,false);
         initUI(rootView);
-        Category category = (Category)getActivity();
+        //Category category = (Category)getActivity();
 
         return rootView;
 

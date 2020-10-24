@@ -39,7 +39,7 @@ public class QuestFragment extends Fragment implements OnDatabaseCallback, AutoP
         write = new Quest_write();
         list = new Quest_list();
 
-        getFragmentManager().beginTransaction().replace(R.id.container,write).commit();
+        getFragmentManager().beginTransaction().replace(R.id.quest_container,write).commit();
 
         TabLayout tabs = rootView.findViewById(R.id.tabs);
         tabs.addTab(tabs.newTab().setText("입력"));
