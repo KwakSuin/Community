@@ -1,6 +1,6 @@
 package kwaksuin.portfolio.community.board.quest;
 
-class QuestInfo {
+public class QuestInfo {
     String title;
     String name;
     String contents;

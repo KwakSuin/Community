@@ -26,7 +26,7 @@ public class Quest_write extends Fragment {
     public void onAttach(Context context) {
         super.onAttach(context);
 
-        callback = (OnDatabaseCallback)getContext();
+        callback = (OnDatabaseCallback)getActivity();
     }
 
     @Override
