@@ -185,7 +185,7 @@ public class QuestDataBase {
 
     public void insertRecord(String title, String name, String contents) {
         try {
-            db.execSQL( "insert into " + TABLE_QUEST_INFO + "(NAME, AUTHOR, CONTENTS) values ('" + title + "', '" + name + "', '" + contents + "');" );
+            db.execSQL( "insert into " + TABLE_QUEST_INFO + "(TITLE, NAME, CONTENTS) values ('" + title + "', '" + name + "', '" + contents + "');" );
         } catch(Exception ex) {
             Log.e(TAG, "Exception in executing insert SQL.", ex);
         }
