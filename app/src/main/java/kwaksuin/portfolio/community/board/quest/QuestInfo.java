@@ -16,7 +16,7 @@ class QuestInfo {
     }
 
     public void setTitle(String title) {
-        this.name = title;
+        this.title = title;
     }
 
     public String getName() {
