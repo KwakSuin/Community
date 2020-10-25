@@ -113,12 +113,14 @@ public class QuestFragment extends Fragment implements OnDatabaseCallback, AutoP
         super.onDestroy();
     }
 
+    // 게시글 입력 
     @Override
     public void insert(String title, String name, String contents) {
         database.insertRecord(title, name, contents);
         Toast.makeText(getContext(), "게시글을 추가했습니다.", Toast.LENGTH_LONG).show();
     }
 
+    // 게시글 조회
     @Override
     public ArrayList<QuestInfo> selectAll() {
         ArrayList<QuestInfo> result = database.selectAll();
