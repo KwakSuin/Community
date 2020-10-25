@@ -30,7 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/questWrite_name"
-        android:layout_above="@+id/button"
+        android:layout_above="@+id/questWrite_button"
         android:gravity="left|top"
         android:hint="내용"
         android:textSize="22sp"
@@ -41,9 +41,13 @@
         android:id="@+id/questWrite_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="81dp"
+        android:layout_marginRight="150dp"
+        android:layout_marginLeft="150dp"
         android:text="올리기" />
+
+
 
 </RelativeLayout>
