@@ -22,15 +22,12 @@ public class Quest_write extends Fragment {
 
     OnDatabaseCallback callback;
 
-    /*
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
 
         callback = (OnDatabaseCallback)getContext();
     }
-
-     */
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
