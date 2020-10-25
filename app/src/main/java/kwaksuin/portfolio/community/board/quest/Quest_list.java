@@ -24,12 +24,15 @@ public class Quest_list extends Fragment {
 
     OnDatabaseCallback callback;
 
+    /*
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
 
         callback = (OnDatabaseCallback) getActivity();
     }
+
+     */
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
