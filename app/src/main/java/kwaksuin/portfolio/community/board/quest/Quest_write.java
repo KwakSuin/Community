@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.zip.Inflater;
+
 import kwaksuin.portfolio.community.R;
 
 public class Quest_write extends Fragment {
@@ -22,7 +24,7 @@ public class Quest_write extends Fragment {
 
     OnDatabaseCallback callback;
 
-
+    /*
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -30,9 +32,13 @@ public class Quest_write extends Fragment {
         callback = (OnDatabaseCallback)getActivity();
     }
 
+     */
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.quest_write, container, false);
+
+        //Context context = inflater.getContext();
 
         questWrite_title = rootView.findViewById(R.id.questWrite_title);
         questWrite_name =  rootView.findViewById(R.id.questWrite_name);

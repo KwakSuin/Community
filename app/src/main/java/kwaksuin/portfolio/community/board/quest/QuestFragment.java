@@ -1,5 +1,6 @@
 package kwaksuin.portfolio.community.board.quest;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -20,6 +21,7 @@ import kwaksuin.portfolio.community.R;
 
 public class QuestFragment extends Fragment implements OnDatabaseCallback, AutoPermissionsListener {
     private static final String TAG ="QuestFragment";
+    private Context mContext;
 
     Quest_write write;
     Quest_list list;
@@ -31,6 +33,7 @@ public class QuestFragment extends Fragment implements OnDatabaseCallback, AutoP
                              Bundle savedInstanceState) {
 
         final ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_quest,container,false);
+
         write = new Quest_write();
         list = new Quest_list();
 
