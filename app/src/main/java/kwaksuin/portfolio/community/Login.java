@@ -4,6 +4,7 @@ package kwaksuin.portfolio.community;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -27,6 +28,7 @@ public class Login extends AppCompatActivity {
         final EditText email = (EditText)findViewById(R.id.userEmail);  // 이메일
         final EditText pwd = (EditText)findViewById(R.id.password);     // 비밀번호
 
+
         // 로그인 버튼
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,11 +45,9 @@ public class Login extends AppCompatActivity {
                     // 로그인 버튼 누르면 카테고리로 이동
                     Intent intent = new Intent(getApplicationContext(),Category.class);
                     startActivityForResult(intent,LOGIN_CODE_MAIN);
-
                 }
             }
         });
-
 
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
