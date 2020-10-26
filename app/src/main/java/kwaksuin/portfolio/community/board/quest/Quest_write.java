@@ -24,14 +24,14 @@ public class Quest_write extends Fragment {
 
     OnDatabaseCallback callback;
 
-    /*
+    /** 현재 오류 부분, context가 QuestFragment로 연결되어야 하는데 Category로 연결됨
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
 
         callback = (OnDatabaseCallback)getActivity().getFragmentManager();
     }
-     */
+    **/
 
 
     @Override
