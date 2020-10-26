@@ -34,11 +34,10 @@ public class QuestFragment extends Fragment implements OnDatabaseCallback, AutoP
 
         final ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_quest,container,false);
 
-        Context context = container.getContext();
-
         write = new Quest_write();
         list = new Quest_list();
 
+        // 질문게시판 누르면, 기본으로 "입력"(quest_write) 화면 보여줌
         getFragmentManager().beginTransaction().replace(R.id.quest_container,write).commit();
 
         TabLayout tabs = rootView.findViewById(R.id.tabs);
@@ -58,6 +57,7 @@ public class QuestFragment extends Fragment implements OnDatabaseCallback, AutoP
                     selected = list;
                 }
 
+                // tab화면 누를 시 전환
                 getFragmentManager().beginTransaction().replace(R.id.quest_container, selected).commit();
             }
 

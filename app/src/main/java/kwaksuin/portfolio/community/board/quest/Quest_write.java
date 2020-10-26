@@ -29,10 +29,10 @@ public class Quest_write extends Fragment {
     public void onAttach(Context context) {
         super.onAttach(context);
 
-        callback = (OnDatabaseCallback)getActivity();
+        callback = (OnDatabaseCallback)getActivity().getFragmentManager();
     }
-
      */
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
