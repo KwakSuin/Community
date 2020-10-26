@@ -34,6 +34,8 @@ public class QuestFragment extends Fragment implements OnDatabaseCallback, AutoP
 
         final ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_quest,container,false);
 
+        Context context = container.getContext();
+
         write = new Quest_write();
         list = new Quest_list();
 
