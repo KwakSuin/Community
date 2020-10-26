@@ -21,8 +21,7 @@ import kwaksuin.portfolio.community.R;
 
 public class QuestFragment extends Fragment implements OnDatabaseCallback, AutoPermissionsListener {
     private static final String TAG ="QuestFragment";
-    private Context mContext;
-
+    
     Quest_write write;
     Quest_list list;
 
@@ -37,7 +36,7 @@ public class QuestFragment extends Fragment implements OnDatabaseCallback, AutoP
         write = new Quest_write();
         list = new Quest_list();
 
-        // 질문게시판 누르면, 기본으로 "입력"(quest_write) 화면 보여줌
+        // 질문게시판 누르면, quest_write 화면 출력
         getFragmentManager().beginTransaction().replace(R.id.quest_container,write).commit();
 
         TabLayout tabs = rootView.findViewById(R.id.tabs);
@@ -50,9 +49,12 @@ public class QuestFragment extends Fragment implements OnDatabaseCallback, AutoP
                 int position = tab.getPosition();
                 Log.d("QuestFragment", "선택된 탭 : " + position);
 
+                // 첫 번째 tab 클릭하면 게시글 입력 화면 출력
                 Fragment selected = null;
                 if (position == 0) {
                     selected = write;
+
+                    // 두 번째 tab 클릭하면 게시글 목록 화면 출력
                 } else if (position == 1) {
                     selected = list;
                 }
