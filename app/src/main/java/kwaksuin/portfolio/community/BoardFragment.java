@@ -1,6 +1,8 @@
 package kwaksuin.portfolio.community;
 
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -49,7 +51,7 @@ public class BoardFragment extends Fragment  {
         tabs.addTab(tabs.newTab().setText("질문게시판"));
         tabs.addTab(tabs.newTab().setText("장터게시판"));
 
-        final Category category = (Category)getActivity();
+        Category category = (Category)getActivity();
 
         tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override

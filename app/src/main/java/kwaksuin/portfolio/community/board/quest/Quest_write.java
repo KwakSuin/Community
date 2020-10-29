@@ -23,24 +23,21 @@ public class Quest_write extends Fragment {
     EditText questWrite_name;
     EditText questWrite_content;
 
-    OnDatabaseCallback callback;
 
-    /** 현재 오류 부분, context가 QuestFragment로 연결되어야 하는데 Category로 연결됨
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-
-        callback = (OnDatabaseCallback)getActivity().getFragmentManager();
-    }
-    **/
+    public OnDatabaseCallback callback;
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
 
+        if(context instanceof OnDatabaseCallback){
+            callback = (OnDatabaseCallback)context;
+        }
+        /*
         if(getActivity() != null && getActivity() instanceof OnDatabaseCallback) {
             callback = ((OnDatabaseCallback) getActivity());
         }
+         */
     }
 
     @Override
@@ -60,8 +57,10 @@ public class Quest_write extends Fragment {
                 String name = questWrite_name.getText().toString();
                 String contents = questWrite_content.getText().toString();
 
-                // 현재 오류 : callback = null; 
-                callback.insert(title, name, contents);
+                // 현재 오류 : callback = null;
+                if(callback != null){
+                    callback.insert(title, name, contents);
+                }
                 Toast.makeText(getContext(), "게시글을 추가했습니다.", Toast.LENGTH_LONG).show();
             }
         });

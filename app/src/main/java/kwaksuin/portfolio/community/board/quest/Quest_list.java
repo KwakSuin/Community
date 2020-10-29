@@ -28,14 +28,15 @@ public class Quest_list extends Fragment {
     public void onAttach(Context context) {
         super.onAttach(context);
 
-        if(getActivity() != null && getActivity() instanceof OnDatabaseCallback) {
-            callback = ((OnDatabaseCallback) getActivity());
+        if(getContext() != null && getContext() instanceof OnDatabaseCallback) {
+            callback = ((OnDatabaseCallback) getContext());
         }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.quest_list, container, false);
+
 
         recyclerView = rootView.findViewById(R.id.recyclerView);
 
