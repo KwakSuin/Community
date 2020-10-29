@@ -7,10 +7,27 @@
     android:orientation="vertical"
     tools:context=".board.photo.PhotoFragment">
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent" >
+
         </androidx.recyclerview.widget.RecyclerView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|bottom"
+            android:layout_marginBottom="100dp"
+            android:src="@android:drawable/ic_menu_edit"
+            card_view:backgroundTint="#FFA7A7" />
+    </FrameLayout>
+
+
 
 </LinearLayout>
