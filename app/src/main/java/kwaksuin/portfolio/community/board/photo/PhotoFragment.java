@@ -17,13 +17,15 @@ public class PhotoFragment extends Fragment {
 
     RecyclerView recyclerView;
     PhotoAdapter adapter;
-    
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_photo,container,false);
+        ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_photo,container,false);
 
-        recyclerView = view.findViewById(R.id.recyclerView);
+        ViewGroup root = (ViewGroup)inflater.inflate(R.layout.photo_item,container,false);
+
+        recyclerView = rootView.findViewById(R.id.recyclerView);
 
         // 한 눈에 보기 좋도록 1차원 grid 사용
         GridLayoutManager layoutManager = new GridLayoutManager(getContext(), 1);
@@ -48,7 +50,7 @@ public class PhotoFragment extends Fragment {
             }
         });
 
-        return view;
+        return rootView;
     }
 
 }
