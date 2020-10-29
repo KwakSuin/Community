@@ -28,8 +28,6 @@ public class PhotoFragment extends Fragment {
                              Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_photo,container,false);
 
-        ViewGroup root = (ViewGroup)inflater.inflate(R.layout.photo_item,container,false);
-
         recyclerView = rootView.findViewById(R.id.recyclerView);
 
         // 한 눈에 보기 좋도록 1차원 grid 사용
