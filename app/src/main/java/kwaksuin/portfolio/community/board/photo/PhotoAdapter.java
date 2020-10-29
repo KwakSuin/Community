@@ -99,10 +99,10 @@ class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.ViewHolder>
         }
 
         public void setItem(Photo item) {
-            Count.setText(String.valueOf(item.getCount()));
-            PhotoTitle.setText(item.getPhototitle());
-            PhotoDate.setText(String.valueOf(item.getPhotoDate()));
-            contentImage.setImageResource(item.getImageRes());
+            Count.setText(String.valueOf(item.getCount()));          // 좋아요 수
+            PhotoTitle.setText(item.getPhototitle());                // 게시글 제목
+            PhotoDate.setText(String.valueOf(item.getPhotoDate()));  // 게시글 날짜
+            contentImage.setImageResource(item.getImageRes());       // 사진
         }
 
 
