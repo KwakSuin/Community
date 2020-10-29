@@ -45,7 +45,7 @@
                         android:orientation="vertical"
                         android:layout_centerVertical="true"
                         android:layout_toRightOf="@+id/imageView01"
-                        android:layout_toLeftOf="@id/spinner"
+                        android:layout_toLeftOf="@id/imageView02"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp">
 
