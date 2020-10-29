@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import java.util.zip.Inflater;
 
+import kwaksuin.portfolio.community.Login;
 import kwaksuin.portfolio.community.R;
 
 public class Quest_write extends Fragment {
@@ -33,18 +34,25 @@ public class Quest_write extends Fragment {
     }
     **/
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+
+        if(getActivity() != null && getActivity() instanceof OnDatabaseCallback) {
+            callback = ((OnDatabaseCallback) getActivity());
+        }
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.quest_write, container, false);
-
-        //Context context = inflater.getContext();
 
         questWrite_title = rootView.findViewById(R.id.questWrite_title);
         questWrite_name =  rootView.findViewById(R.id.questWrite_name);
         questWrite_content = rootView.findViewById(R.id.questWrite_contents);
 
         Button button = rootView.findViewById(R.id.questWrite_button);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,6 +60,7 @@ public class Quest_write extends Fragment {
                 String name = questWrite_name.getText().toString();
                 String contents = questWrite_content.getText().toString();
 
+                // 현재 오류 : callback = null; 
                 callback.insert(title, name, contents);
                 Toast.makeText(getContext(), "게시글을 추가했습니다.", Toast.LENGTH_LONG).show();
             }

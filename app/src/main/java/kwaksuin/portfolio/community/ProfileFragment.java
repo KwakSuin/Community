@@ -1,5 +1,6 @@
 package kwaksuin.portfolio.community;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -23,6 +24,7 @@ public class ProfileFragment extends Fragment {
         TextView myName = rootView.findViewById(R.id.profile_myName);
 
         // Login.java에서 입력된 email 정보를 profile_Email_Data에 getText()
+
 
         // SignUp.java에서 입력된 name 정보를 profile_Name_Data에 getText()
 

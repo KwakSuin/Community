@@ -24,15 +24,14 @@ public class Quest_list extends Fragment {
 
     OnDatabaseCallback callback;
 
-
-    /** 현재 오류 부분, context가 QuestFragment로 연결되어야 하는데 Category로 연결됨
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
 
-        callback = (OnDatabaseCallback) getActivity();
+        if(getActivity() != null && getActivity() instanceof OnDatabaseCallback) {
+            callback = ((OnDatabaseCallback) getActivity());
+        }
     }
-     **/
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -59,9 +58,11 @@ public class Quest_list extends Fragment {
         });
 
         Button button = rootView.findViewById(R.id.button);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // 현재 오류 : callback = null
                 ArrayList<QuestInfo> result = callback.selectAll();
                 adapter.setItems(result);
                 adapter.notifyDataSetChanged();

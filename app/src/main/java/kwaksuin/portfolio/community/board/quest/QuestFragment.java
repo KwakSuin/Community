@@ -21,6 +21,8 @@ import kwaksuin.portfolio.community.R;
 
 public class QuestFragment extends Fragment implements OnDatabaseCallback, AutoPermissionsListener {
     private static final String TAG ="QuestFragment";
+
+    public static Object board;
     
     Quest_write write;
     Quest_list list;
@@ -134,5 +136,10 @@ public class QuestFragment extends Fragment implements OnDatabaseCallback, AutoP
         Toast.makeText(getContext(), "게시글 목록입니다.", Toast.LENGTH_LONG).show();
 
         return result;
+    }
+
+    public Object getData()
+    {
+        return board;
     }
 }
