@@ -31,14 +31,14 @@ public class BoardFragment extends Fragment  {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         final ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_board,container,false);
-        initUI(rootView);
+        communityTab(rootView);
         Category category = (Category)getActivity();
 
         return rootView;
 
     }
 
-    public void initUI(ViewGroup rootView){         // 각각 상단 탭 화면
+    public void communityTab(ViewGroup rootView){         // 각각 상단 탭 화면
 
         free = new FreeFragment();
         photo = new PhotoFragment();
