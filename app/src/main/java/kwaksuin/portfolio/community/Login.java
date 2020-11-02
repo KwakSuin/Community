@@ -2,10 +2,16 @@ package kwaksuin.portfolio.community;
 
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -43,6 +49,15 @@ public class Login extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(),"이메일/비밀번호를 입력하세요.",Toast.LENGTH_LONG).show();
                     }
                 }else {
+
+                    /* email 입력 값 전송 - 전송 안됨
+                    Bundle bundle = new Bundle();
+                    ProfileFragment profileFragment = new ProfileFragment();
+                    bundle.putString("email",userEmail);
+                    profileFragment.setArguments(bundle)
+
+                     */
+
                     // 로그인 버튼 누르면 카테고리로 이동
                     Intent intent = new Intent(getApplicationContext(),Category.class);
                     startActivityForResult(intent,LOGIN_CODE_MAIN);
