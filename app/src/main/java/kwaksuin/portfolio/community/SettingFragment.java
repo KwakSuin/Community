@@ -37,6 +37,21 @@ public class SettingFragment extends Fragment {
                 request();
             }
         });
+
+        TextView qnaButton = rootView.findViewById(R.id.app_QnA);
+        qnaButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent email = new Intent(Intent.ACTION_SEND);
+                email.setType("plain/text");
+                // 관리자 이메일
+                String[] address = {"mygirls0@naver.com"};
+                email.putExtra(Intent.EXTRA_EMAIL,address); // 이메일 주소
+                email.putExtra(Intent.EXTRA_SUBJECT,"문의하기");    // 이메일 제목
+                email.putExtra(Intent.EXTRA_TEXT,"문의내용");       // 이메일 내용
+                startActivity(email);
+            }
+        });
         return rootView;
     }
 
