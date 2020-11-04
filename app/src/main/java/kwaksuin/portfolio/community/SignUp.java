@@ -35,20 +35,26 @@ public class SignUp extends AppCompatActivity {
                 String userName = name.getText().toString();
 
                 if(userPwd.equals(userRePwd)){
-                    // 비밀번호가 일치함
-                    Intent intent = new Intent(getApplicationContext(),Category.class);
-                    startActivityForResult(intent,SIGNUP_CODE_MAIN);
-                    Toast.makeText(getApplicationContext(),"가입이 완료되었습니다.",Toast.LENGTH_LONG).show();
+                    if(userEmail.length() != 0){
+                        if(userName.length() !=0){
+                            if(userPwd.length() != 0){
+                                if(userRePwd.length() != 0){
+                                    // 정보가 입력되어있고, 비밀번호가 일치할 때
+                                    Intent intent = new Intent(getApplicationContext(),Category.class);
+                                    startActivityForResult(intent,SIGNUP_CODE_MAIN);
+                                    Toast.makeText(getApplicationContext(),"가입이 완료되었습니다.",Toast.LENGTH_LONG).show();
+                                }
+                            }
+                        }
+                    }
 
                     // DB연동
+
                 }else{
                     // 비밀번호가가불일치 함
                     Toast.makeText(getApplicationContext(),"비밀번호가 일치하지 않습니다.",Toast.LENGTH_SHORT).show();
+                    
                }
-
-
-
-
             }
         });
     }
