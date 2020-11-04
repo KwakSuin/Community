@@ -26,6 +26,8 @@ public class PhotoFragment extends Fragment {
     private int doubleClick = 0;
     private final long CLICK_DELAY = 250;
 
+    PhotoWrite photowrite;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -72,15 +74,9 @@ public class PhotoFragment extends Fragment {
             }
         });
 
+        photowrite = new PhotoWrite();
         // 사진게시판 글쓰기 버튼
-        FloatingActionButton floatingButton = rootView.findViewById(R.id.floatingButton);
-        floatingButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(),PhotoWrite.class);
-                startActivity(intent);
-            }
-        });
+
 
         return rootView;
     }
