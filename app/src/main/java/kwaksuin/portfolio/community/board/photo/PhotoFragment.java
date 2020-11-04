@@ -1,5 +1,6 @@
 package kwaksuin.portfolio.community.board.photo;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -76,7 +77,8 @@ public class PhotoFragment extends Fragment {
         floatingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getContext(),PhotoWrite.class);
+                startActivity(intent);
             }
         });
 
