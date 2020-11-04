@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import kwaksuin.portfolio.community.R;
 
 public class PhotoFragment extends Fragment {
@@ -65,11 +67,16 @@ public class PhotoFragment extends Fragment {
                     doubleClick=0;
                     Photo item = (Photo) adapter.getItem(position);
                     Toast.makeText(getContext(),"좋아요!",Toast.LENGTH_SHORT).show();
-
-                    /** 좋아요 수 같이 출력 하기
-                    Toast.makeText(getContext(), "좋아요 수 : " + item.getCount(), Toast.LENGTH_LONG).show();
-                     **/
                 }
+            }
+        });
+
+        // 사진게시판 글쓰기 버튼
+        FloatingActionButton floatingButton = rootView.findViewById(R.id.floatingButton);
+        floatingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
 

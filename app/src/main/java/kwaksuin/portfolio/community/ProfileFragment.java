@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -33,6 +34,8 @@ public class ProfileFragment extends Fragment {
         }
 
         // SignUp.java에서 입력된 name 정보를 profile_Name_Data에 getText()
+
+        Button photoChange = rootView.findViewById(R.id.change_photo);
 
         return rootView;
     }
