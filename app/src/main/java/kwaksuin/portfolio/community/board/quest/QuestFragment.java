@@ -61,7 +61,7 @@ public class QuestFragment extends Fragment implements OnDatabaseCallback, AutoP
                     selected = list;
                 }
 
-                // tab화면 누를 시 전환
+                // tab화면 누를 시 전환 - 오류 예상
                 getFragmentManager().beginTransaction().replace(R.id.quest_container, selected).commit();
             }
 

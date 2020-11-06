@@ -34,15 +34,17 @@ public class SignUp extends AppCompatActivity {
                 String userRePwd = repwd.getText().toString();
                 String userName = name.getText().toString();
 
+                // 정보가 입력되어있고, 비밀번호가 일치할 때 
                 if(userPwd.equals(userRePwd) && userEmail.length()!=0 && userName.length()!=0 && userPwd.length() != 0 && userRePwd.length() != 0){
-                    // 정보가 입력되어있고, 비밀번호가 일치할 때
-                    Intent intent = new Intent(getApplicationContext(),Category.class);
+                    // 회원가입 완료 후, 로그인 화면으로 이동
+                    Intent intent = new Intent(getApplicationContext(),Login.class);
                     startActivityForResult(intent,SIGNUP_CODE_MAIN);
                     Toast.makeText(getApplicationContext(),"가입이 완료되었습니다.",Toast.LENGTH_LONG).show();
+
                     // DB연동
 
                  }else{
-                    // 비밀번호가가불일치 함
+                    // 비밀번호가 불일치 함
                     Toast.makeText(getApplicationContext(),"비밀번호가 일치하지 않습니다.",Toast.LENGTH_SHORT).show();
 
                }
