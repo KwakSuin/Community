@@ -92,8 +92,6 @@
 
             </LinearLayout>
 
-
-
             <Button
                 android:id="@+id/profilePhoto_change"
                 android:layout_width="wrap_content"
