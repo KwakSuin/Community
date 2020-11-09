@@ -1,64 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".board.photo.PhotoWrite">
+    <LinearLayout
+            android:id="@+id/titleLinear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/photoWriteTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:hint="제목"
+                android:padding="20dp"
+                android:textColor="#000000"
+                android:textSize="22sp" />
+    </LinearLayout>
 
     <LinearLayout
-        android:id="@id/linearlayout"
+        android:id="@+id/contentLinear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/titleLinear"
         android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/photoWrite_title"
+        <ImageView
+            android:id="@+id/photoWriteImage"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:hint="제목"
-            android:textSize="22sp"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/photoWriteContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/photoWriteButton"
+            android:layout_below="@+id/contentLinear"
+            android:gravity="left|top"
+            android:hint="내용"
+            android:padding="20dp"
             android:textColor="#000000"
-            android:padding="20dp"/>
+            android:textSize="22sp" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linear"
         android:layout_width="match_parent"
-        android:layout_height="350dp"
-        android:orientation="vertical"
-        android:layout_below="@+id/linearlayout">
-
-        <ImageView
-            android:id="@+id/photo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:src="@drawable/dog" />
-    </LinearLayout>
-
-
-    <EditText
-        android:id="@+id/photoWrite_contents"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/photoWrite_button"
-        android:layout_below="@+id/linear"
-        android:gravity="left|top"
-        android:hint="내용"
-        android:padding="20dp"
-        android:textColor="#000000"
-        android:textSize="22sp" />
-
-    <Button
-        android:id="@+id/photoWrite_button"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="81dp"
-        android:layout_marginRight="150dp"
-        android:layout_marginLeft="150dp"
-        android:text="올리기" />
+        android:orientation="horizontal"
+        android:layout_below="@+id/contentLinear"
+        android:gravity="center_horizontal">
 
-</RelativeLayout>
+        <Button
+            android:id="@+id/photoWriteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="올리기" />
+
+        <Button
+            android:id="@+id/photoAddButon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="사진첨부" />
+    </LinearLayout>
+</LinearLayout>

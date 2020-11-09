@@ -78,7 +78,7 @@ public class Photolist extends Fragment {
             @Override
             public void onClick(View v) {
                 // 글쓰기 화면 이동
-                //getFragmentManager().beginTransaction().replace(R.id.컨테이너, photowrite).commit();
+                getFragmentManager().beginTransaction().replace(R.id.photo_container, photowrite).commit();
             }
         });
 
