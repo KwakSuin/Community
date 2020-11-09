@@ -111,9 +111,6 @@ public class ProfileFragment extends Fragment {
                 // 갤러리 불러오기
                 intent.setDataAndType(mImageCaptureUri,"image/*");
 
-                // CROP할 이미지를 200*200 크기로 저장
-                intent.putExtra("outputX", 200);    // CROP한 이미지의 x축 크기
-                intent.putExtra("outputY", 200);    // CROP한 이미지의 y축 크기
                 intent.putExtra("aspectX",1);       // CROP 박스의 x축 비율
                 intent.putExtra("aspectY",1);       // CROP 박스의 y축 비율
                 intent.putExtra("scale",true);

@@ -32,7 +32,8 @@
         <ImageView
             android:id="@+id/photoWriteImage"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="250dp"
+            android:src="@drawable/color"/>
 
         <EditText
             android:id="@+id/photoWriteContent"
