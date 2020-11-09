@@ -1,6 +1,5 @@
 package kwaksuin.portfolio.community.board.photo;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -11,14 +10,13 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import kwaksuin.portfolio.community.R;
-
-public class PhotoFragment extends Fragment {
+public class Photolist extends Fragment {
+    PhotoWrite photowrite;
 
     RecyclerView recyclerView;
     PhotoAdapter adapter;
@@ -26,19 +24,11 @@ public class PhotoFragment extends Fragment {
     private int doubleClick = 0;
     private final long CLICK_DELAY = 250;
 
-    PhotoWrite photowrite;
-
-    Photolist photolist;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_photo,container,false);
+        ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.photo_list,container,false);
 
-        photolist = new Photolist();
-        getFragmentManager().beginTransaction().replace(R.id.photo_container, photolist).commit();
-
-        /*
         recyclerView = rootView.findViewById(R.id.recyclerView);
 
         // 한 눈에 보기 좋도록 1차원 grid 사용
@@ -80,12 +70,17 @@ public class PhotoFragment extends Fragment {
             }
         });
 
-         */
-
-
-
+        photowrite = new PhotoWrite();
+        // 사진게시판 글쓰기 버튼
+        FloatingActionButton floatingActionButton = rootView.findViewById(R.id.floatingButton);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 글쓰기 화면 이동
+                //getFragmentManager().beginTransaction().replace(R.id.컨테이너, photowrite).commit();
+            }
+        });
 
         return rootView;
     }
-
 }
