@@ -107,6 +107,8 @@ public class ProfileFragment extends Fragment {
             case PICK_FROM_CAMERA : {
                 // 이미지를 가져온 후, 이미지 크기 결정
                 Intent intent = new Intent("com.android.camera.action.CROP");
+
+                // 갤러리 불러오기
                 intent.setDataAndType(mImageCaptureUri,"image/*");
 
                 // CROP할 이미지를 200*200 크기로 저장
@@ -116,11 +118,10 @@ public class ProfileFragment extends Fragment {
                 intent.putExtra("aspectY",1);       // CROP 박스의 y축 비율
                 intent.putExtra("scale",true);
                 intent.putExtra("return-data",true);
-                startActivityForResult(intent,CROP_FROM_iMAGE);
+                startActivityForResult(intent,CROP_FROM_iMAGE);  // 잘린 사진 출력
                 break;
             }
             case CROP_FROM_iMAGE : {
-                // 사진크기 조절 후
                 if(resultCode != RESULT_OK){
                     return;
                 }
@@ -133,7 +134,7 @@ public class ProfileFragment extends Fragment {
                         +"/Community"+System.currentTimeMillis()+".jpg";
 
                 if(extras != null){
-                    // 조절한 사진
+                    // 조절한 사진받아오기
                     Bitmap photo = extras.getParcelable("data");
 
                     // 조절된 사진을 보여줌
