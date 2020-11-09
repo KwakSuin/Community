@@ -63,6 +63,36 @@ public class PhotoWrite extends Fragment {
         });
 
         // 사진첨부 버튼
+        photoWriteImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(v.getId() == R.id.photoWriteImage){
+                    DialogInterface.OnClickListener cameraListener = new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            // 사진첨부 함수
+                            doTakePhotoAction();
+                        }
+                    };
+
+                    // dialog 선택하면 dialog 사라지게 하는 것
+                    DialogInterface.OnClickListener cacnleListener = new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    };
+
+                    // dialog 박스
+                    new AlertDialog.Builder(getContext())
+                            .setTitle("사진첨부")
+                            .setPositiveButton("앨범선택",cameraListener)
+                            .setNegativeButton("취소",cacnleListener)
+                            .show();
+                }
+            }
+        });
+        /*
         Button photoAddButton = rootView.findViewById(R.id.photoAddButon);
         photoAddButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,6 +123,8 @@ public class PhotoWrite extends Fragment {
                 }
             }
         });
+
+         */
 
         return rootView;
     }
@@ -129,7 +161,7 @@ public class PhotoWrite extends Fragment {
                 // 갤러리 불러오기
                 intent.setDataAndType(mImageCaptureUri,"image/*");
 
-                // CROP할 이미지를 200*200 크기로 저장
+                // 사진크기조절
                 intent.putExtra("scale",true);
                 intent.putExtra("return-data",true);
                 startActivityForResult(intent,CROP_FROM_iMAGE);
