@@ -13,63 +13,28 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.ArrayList;
 
 import kwaksuin.portfolio.community.R;
 
 public class Quest_list extends Fragment {
-
-    RecyclerView recyclerView;
-    QuestAdapter adapter;
-
-    OnDatabaseCallback callback;
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-
-        if(getContext() != null && getContext() instanceof OnDatabaseCallback) {
-            callback = ((OnDatabaseCallback) getContext());
-        }
-    }
+    Quest_write write;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.quest_list, container, false);
 
+        write = new Quest_write();
 
-        recyclerView = rootView.findViewById(R.id.recyclerView);
-
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
-        recyclerView.setLayoutManager(layoutManager);
-
-        adapter = new QuestAdapter();
-        recyclerView.setAdapter(adapter);
-
-        ArrayList<QuestInfo> result = callback.selectAll();
-        adapter.setItems(result);
-
-        adapter.setOnItemClickListener(new OnQuestClickListener() {
-            @Override
-            public void onQuestClick(QuestAdapter.ViewHolder holder, View view, int position) {
-                QuestInfo item = adapter.getItem(position);
-
-                Toast.makeText(getContext(), "게시글 선택됨 : " + item.getName(), Toast.LENGTH_LONG).show();
-            }
-        });
-
-        Button button = rootView.findViewById(R.id.button);
-
-        button.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton floatingActionButton = rootView.findViewById(R.id.floatingButton);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // 현재 오류 : callback = null
-                ArrayList<QuestInfo> result = callback.selectAll();
-                adapter.setItems(result);
-                adapter.notifyDataSetChanged();
+                getFragmentManager().beginTransaction().replace(R.id.quest_container, write).commit();
             }
         });
-
         return rootView;
     }
 }

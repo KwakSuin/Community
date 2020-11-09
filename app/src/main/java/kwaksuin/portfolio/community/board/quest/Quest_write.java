@@ -25,38 +25,31 @@ public class Quest_write extends Fragment {
     EditText questWrite_name;
     EditText questWrite_content;
 
-    public OnDatabaseCallback callback;
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if(context instanceof OnDatabaseCallback){
-            callback = (OnDatabaseCallback)context;
-        }
-    }
-
+    Quest_list list;
+    Quest_write write;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.quest_write, container, false);
 
         questWrite_title = rootView.findViewById(R.id.questWrite_title);
-        questWrite_name =  rootView.findViewById(R.id.questWrite_name);
         questWrite_content = rootView.findViewById(R.id.questWrite_contents);
+
+        list = new Quest_list();
+        write = new Quest_write();
+
 
         Button button = rootView.findViewById(R.id.questWrite_button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String title = questWrite_title.getText().toString();
-                String name = questWrite_name.getText().toString();
                 String contents = questWrite_content.getText().toString();
 
-                // 현재 오류 : callback = null;
-                if(callback != null){
-                    callback.insert(title, name, contents);
-                }
                 Toast.makeText(getContext(), "게시글을 추가했습니다.", Toast.LENGTH_LONG).show();
+
+                // 게시글 추가 후, 목록으로 이동
+                getFragmentManager().beginTransaction().replace(R.id.quest_container, list).commit();
             }
         });
 

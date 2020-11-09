@@ -76,6 +76,14 @@ public class PhotoFragment extends Fragment {
 
         photowrite = new PhotoWrite();
         // 사진게시판 글쓰기 버튼
+        FloatingActionButton floatingActionButton = rootView.findViewById(R.id.floatingButton);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 글쓰기 화면 이동
+                //getFragmentManager().beginTransaction().replace(R.id.컨테이너, photowrite).commit();
+            }
+        });
 
 
         return rootView;

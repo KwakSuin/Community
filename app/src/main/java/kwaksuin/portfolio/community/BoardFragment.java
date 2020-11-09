@@ -21,7 +21,6 @@ import kwaksuin.portfolio.community.board.quest.QuestFragment;
 
 public class BoardFragment extends Fragment  {
 
-
     FreeFragment free;      // 자유게시판
     PhotoFragment photo;    // 사진게시판
     QuestFragment quest;    // 질문게시판
@@ -31,6 +30,10 @@ public class BoardFragment extends Fragment  {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         final ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_board,container,false);
+
+        free = new FreeFragment();
+        getFragmentManager().beginTransaction().replace(R.id.board_container, free).commit();
+
         communityTab(rootView);
         Category category = (Category)getActivity();
 

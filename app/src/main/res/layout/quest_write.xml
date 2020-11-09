@@ -15,21 +15,12 @@
         android:textColor="#000000"
         android:padding="20dp"/>
 
-    <EditText
-        android:id="@+id/questWrite_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/questWrite_title"
-        android:hint="닉네임"
-        android:textSize="22sp"
-        android:textColor="#000000"
-        android:padding="20dp"/>
 
     <EditText
         android:id="@+id/questWrite_contents"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/questWrite_name"
+        android:layout_below="@+id/questWrite_title"
         android:layout_above="@+id/questWrite_button"
         android:gravity="left|top"
         android:hint="내용"
