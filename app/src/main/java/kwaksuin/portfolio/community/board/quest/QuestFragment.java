@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import kwaksuin.portfolio.community.R;
 
 public class QuestFragment extends Fragment implements OnDatabaseCallback, AutoPermissionsListener {
+
     private static final String TAG ="QuestFragment";
 
     public static Object board;
@@ -28,6 +29,15 @@ public class QuestFragment extends Fragment implements OnDatabaseCallback, AutoP
     Quest_list list;
 
     QuestDataBase database;
+    public OnDatabaseCallback callback;
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+
+        if(context instanceof OnDatabaseCallback){
+            callback = (OnDatabaseCallback)context;
+        }
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

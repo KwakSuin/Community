@@ -1,6 +1,7 @@
 package kwaksuin.portfolio.community.board.quest;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 
 import java.util.zip.Inflater;
 
+import kwaksuin.portfolio.community.Category;
 import kwaksuin.portfolio.community.Login;
 import kwaksuin.portfolio.community.R;
 
@@ -23,22 +25,16 @@ public class Quest_write extends Fragment {
     EditText questWrite_name;
     EditText questWrite_content;
 
-
     public OnDatabaseCallback callback;
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-
         if(context instanceof OnDatabaseCallback){
             callback = (OnDatabaseCallback)context;
         }
-        /*
-        if(getActivity() != null && getActivity() instanceof OnDatabaseCallback) {
-            callback = ((OnDatabaseCallback) getActivity());
-        }
-         */
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -49,7 +45,6 @@ public class Quest_write extends Fragment {
         questWrite_content = rootView.findViewById(R.id.questWrite_contents);
 
         Button button = rootView.findViewById(R.id.questWrite_button);
-
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
