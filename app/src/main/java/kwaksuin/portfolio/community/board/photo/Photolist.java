@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import kwaksuin.portfolio.community.R;
+
 public class Photolist extends Fragment {
     PhotoWrite photowrite;
 
