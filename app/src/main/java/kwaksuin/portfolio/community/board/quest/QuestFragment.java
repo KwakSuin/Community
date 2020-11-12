@@ -24,8 +24,8 @@ import kwaksuin.portfolio.community.R;
 public class QuestFragment extends Fragment {
 
     private static final String TAG = "QuestFragment";
-
     public static Object board;
+
 
     Quest_write write;
     Quest_list list;
