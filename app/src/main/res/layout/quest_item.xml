@@ -37,7 +37,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Title"
-                    android:textSize="22sp"
+                    android:textSize="20sp"
                     android:textStyle="bold"
                     android:textColor="#000000" />
 
@@ -66,6 +66,15 @@
                         android:text="Contents"
                         android:textSize="16sp"
                         android:textColor="#4902d6" />
+
+                    <TextView
+                        android:id="@+id/quest_review"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="Review"
+                        android:textSize="16sp"
+                        android:textColor="#A6A6A6" />
                 </RelativeLayout>
             </LinearLayout>
         </LinearLayout>

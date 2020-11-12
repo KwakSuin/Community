@@ -1,7 +1,7 @@
 package kwaksuin.portfolio.community.board.quest;
 
 class Quest_board {
-    private String id;
+    private String review;
     private String title;
     private String contents;
     private String name;
@@ -10,19 +10,19 @@ class Quest_board {
 
     }
 
-    public Quest_board(String id, String title, String contents, String name) {
-        this.id = id;
+    public Quest_board(String review, String title, String contents, String name) {
+        this.review = review;
         this.title = title;
         this.contents = contents;
         this.name = name;
     }
 
-    public String getId() {
-        return id;
+    public String getReview() {
+        return review;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setReview(String review) {
+        this.review = review;
     }
 
     public String getTitle() {
@@ -52,7 +52,7 @@ class Quest_board {
     @Override
     public String toString() {
         return "Quest_board{" +
-                "id='" + id + '\'' +
+                "review='" + review + '\'' +
                 ", title='" + title + '\'' +
                 ", contents='" + contents + '\'' +
                 ", name='" + name + '\'' +

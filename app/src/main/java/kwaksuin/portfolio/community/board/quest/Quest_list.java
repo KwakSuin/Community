@@ -37,10 +37,10 @@ public class Quest_list extends Fragment {
 
         recyclerView = rootView.findViewById(R.id.recyclerView);
         boardList = new ArrayList<>();
-        boardList.add(new Quest_board(null,"중성화 수술은 언제하나요?",null,"android"));
-        boardList.add(new Quest_board(null,"치와와 간식 추천해주세요!",null,"android"));
-        boardList.add(new Quest_board(null,"다들 옷은 어디서 구매하세요?",null,"android"));
-        boardList.add(new Quest_board(null,"수도권 애견카페 추천 해주실 수 있나요?",null,"android"));
+        boardList.add(new Quest_board("3","중성화 수술은 언제하나요?","언제하나요?","모모주인"));
+        boardList.add(new Quest_board("0","치와와 간식 추천해주세요!","추천해주세요!","복희"));
+        boardList.add(new Quest_board("5","다들 옷은 어디서 구매하세요?","1살된 강아지 옷이요!","장군"));
+        boardList.add(new Quest_board("8","수도권 애견카페 추천 해주실 수 있나요?","서울, 경기 쪽이요!","소녀"));
 
         adapter = new Adapter(boardList);
         recyclerView.setAdapter(adapter);

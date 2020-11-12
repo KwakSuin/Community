@@ -32,8 +32,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
     @Override
     public void onBindViewHolder(@NonNull Adapter.ViewHolder holder, int position) {
         Quest_board data = boardList.get(position);
-        holder.title.setText(data.getTitle());
-        holder.name.setText(data.getName());
+        holder.title.setText(data.getTitle());          // 제목
+        holder.name.setText(data.getName());            // 닉네임
+        holder.contents.setText(data.getContents());    // 내용
+        holder.review.setText(data.getReview());        // 댓글 수
     }
 
     @Override
@@ -44,12 +46,17 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
     class ViewHolder extends RecyclerView.ViewHolder{
         private TextView title;
         private TextView name;
+        private TextView contents;
+        private TextView review;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             title = itemView.findViewById(R.id.quest_title);
             name = itemView.findViewById(R.id.quest_name);
+            contents = itemView.findViewById(R.id.quest_contents);
+            review = itemView.findViewById(R.id.quest_review);
+
         }
 
     }
