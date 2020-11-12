@@ -45,25 +45,6 @@ public class Quest_write extends Fragment {
         questWrite_content = rootView.findViewById(R.id.questWrite_contents);
         //questWrite_name = rootView.findViewById(R.id.quest_name);
 
-        Map<String, Object> post = new HashMap<>();
-        post.put("title",questWrite_title.getText().toString());
-        post.put("contents",questWrite_content.getText().toString());
-
-        store.collection("QuestBoard").add(post)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference pDocumentReference) {
-                        Toast.makeText(getContext(),"업로드 성공",Toast.LENGTH_SHORT).show();
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception pE) {
-                        Toast.makeText(getContext(),"업로드 실패",Toast.LENGTH_SHORT).show();
-                    }
-        });
-
-
         list = new Quest_list();
         write = new Quest_write();
 
@@ -72,10 +53,29 @@ public class Quest_write extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String title = questWrite_title.getText().toString();
-                String contents = questWrite_content.getText().toString();
+                //String title = questWrite_title.getText().toString();
+                //String contents = questWrite_content.getText().toString();
 
-                Toast.makeText(getContext(), "게시글을 추가했습니다.", Toast.LENGTH_LONG).show();
+                Map<String, Object> post = new HashMap<>();
+                post.put("title",questWrite_title.getText().toString());
+                post.put("contents",questWrite_content.getText().toString());
+
+                store.collection("QuestBoard").add(post)
+                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                            @Override
+                            public void onSuccess(DocumentReference pDocumentReference) {
+                                Toast.makeText(getContext(),"업로드 성공",Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception pE) {
+                                Toast.makeText(getContext(),"업로드 실패",Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
+
+                //Toast.makeText(getContext(), "게시글을 추가했습니다.", Toast.LENGTH_LONG).show();
 
                 // 게시글 추가 후, 목록으로 이동
                 getFragmentManager().beginTransaction().replace(R.id.quest_container, list).commit();
