@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -13,6 +14,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 import java.util.zip.Inflater;
 
 import kwaksuin.portfolio.community.Category;
@@ -20,6 +28,7 @@ import kwaksuin.portfolio.community.Login;
 import kwaksuin.portfolio.community.R;
 
 public class Quest_write extends Fragment {
+    private FirebaseFirestore store = FirebaseFirestore.getInstance();
 
     EditText questWrite_title;
     EditText questWrite_name;
@@ -34,6 +43,26 @@ public class Quest_write extends Fragment {
 
         questWrite_title = rootView.findViewById(R.id.questWrite_title);
         questWrite_content = rootView.findViewById(R.id.questWrite_contents);
+        //questWrite_name = rootView.findViewById(R.id.quest_name);
+
+        Map<String, Object> post = new HashMap<>();
+        post.put("title",questWrite_title.getText().toString());
+        post.put("contents",questWrite_content.getText().toString());
+
+        store.collection("QuestBoard").add(post)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference pDocumentReference) {
+                        Toast.makeText(getContext(),"업로드 성공",Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception pE) {
+                        Toast.makeText(getContext(),"업로드 실패",Toast.LENGTH_SHORT).show();
+                    }
+        });
+
 
         list = new Quest_list();
         write = new Quest_write();
