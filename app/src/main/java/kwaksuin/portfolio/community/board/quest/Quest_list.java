@@ -1,19 +1,13 @@
 package kwaksuin.portfolio.community.board.quest;
 
-import android.content.Context;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -26,7 +20,7 @@ public class Quest_list extends Fragment {
     Quest_write write;
     private RecyclerView recyclerView;
 
-    private Adapter adapter;
+    private QuestAdapter adapter;
     private List<Quest_board> boardList;
 
     @Override
@@ -42,7 +36,7 @@ public class Quest_list extends Fragment {
         boardList.add(new Quest_board("5","다들 옷은 어디서 구매하세요?","1살된 강아지 옷이요!","장군"));
         boardList.add(new Quest_board("8","수도권 애견카페 추천 해주실 수 있나요?","서울, 경기 쪽이요!","소녀"));
 
-        adapter = new Adapter(boardList);
+        adapter = new QuestAdapter(boardList);
         recyclerView.setAdapter(adapter);
 
         FloatingActionButton floatingActionButton = rootView.findViewById(R.id.floatingButton);

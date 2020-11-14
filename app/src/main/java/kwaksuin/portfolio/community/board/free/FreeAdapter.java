@@ -1,6 +1,5 @@
-package kwaksuin.portfolio.community.board.quest;
+package kwaksuin.portfolio.community.board.free;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,26 +11,25 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import kwaksuin.portfolio.community.R;
+import kwaksuin.portfolio.community.board.free.Free_board;
 
-// Adapter는 데이터들을 리스트에 넣어주는 역할
-// 데이터와 리스트뷰를 연결해주는 역할
-public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
+public class FreeAdapter extends RecyclerView.Adapter<FreeAdapter.ViewHolder>{
 
-    private List<Quest_board> boardList;
+    private List<Free_board> boardList;
 
-    public Adapter(List<Quest_board> boardList){
+    public FreeAdapter(List<Free_board> boardList){
         this.boardList = boardList;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.quest_item,parent,false));
+        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.free_item,parent,false));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull Adapter.ViewHolder holder, int position) {
-        Quest_board data = boardList.get(position);
+    public void onBindViewHolder(@NonNull FreeAdapter.ViewHolder holder, int position) {
+        Free_board data = boardList.get(position);
         holder.title.setText(data.getTitle());          // 제목
         holder.name.setText(data.getName());            // 닉네임
         holder.contents.setText(data.getContents());    // 내용
@@ -52,12 +50,11 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            title = itemView.findViewById(R.id.quest_title);
-            name = itemView.findViewById(R.id.quest_name);
-            contents = itemView.findViewById(R.id.quest_contents);
-            review = itemView.findViewById(R.id.quest_review);
+            title = itemView.findViewById(R.id.free_title);
+            name = itemView.findViewById(R.id.free_name);
+            contents = itemView.findViewById(R.id.free_contents);
+            review = itemView.findViewById(R.id.free_review);
 
         }
-
     }
 }
