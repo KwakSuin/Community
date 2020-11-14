@@ -16,7 +16,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import kwaksuin.portfolio.community.R;
 
-public class Photolist extends Fragment {
+public class PhotoList extends Fragment {
     PhotoWrite photowrite;
 
     RecyclerView recyclerView;

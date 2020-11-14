@@ -28,7 +28,7 @@ import kwaksuin.portfolio.community.R;
 import static android.app.Activity.RESULT_OK;
 
 public class PhotoWrite extends Fragment {
-    Photolist photolist;
+    PhotoList photolist;
 
     private static final int PICK_FROM_CAMERA = 0;
     private static final int PICK_FROM_ALBUM = 1;
@@ -48,7 +48,7 @@ public class PhotoWrite extends Fragment {
                              Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.photo_write,container,false);
 
-        photolist = new Photolist();
+        photolist = new PhotoList();
         photoWriteImage = rootView.findViewById(R.id.photoWriteImage);
         
         // 올리기 버튼 누르면 게시글 목록으로 이동

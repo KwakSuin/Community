@@ -11,12 +11,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import kwaksuin.portfolio.community.board.free.FreeList;
-import kwaksuin.portfolio.community.board.photo.Photolist;
+import kwaksuin.portfolio.community.board.photo.PhotoList;
 import kwaksuin.portfolio.community.board.quest.QuestList;
 
 public class HomeFragment extends Fragment {
     FreeList freeList;
-    Photolist photoList;
+    PhotoList photoList;
     QuestList questList;
     // 장터게시판
 
@@ -27,7 +27,7 @@ public class HomeFragment extends Fragment {
 
 
         freeList = new FreeList();
-        photoList = new Photolist();
+        photoList = new PhotoList();
         questList = new QuestList();
 
         /** 게시판 이름 누르면 해당 게시판으로 이동 **/
