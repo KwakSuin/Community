@@ -17,7 +17,7 @@ import java.util.List;
 import kwaksuin.portfolio.community.R;
 
 public class Quest_list extends Fragment {
-    Quest_write write;
+    private Quest_write write;
     private RecyclerView recyclerView;
 
     private QuestAdapter adapter;

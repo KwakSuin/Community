@@ -7,16 +7,33 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
 import kwaksuin.portfolio.community.R;
 
 
 public class Free_write extends Fragment {
+    Free_list list;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.free_write, container, false);
+        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.free_write, container, false);
+
+        list = new Free_list();
+
+        // 게시글 올리기 버튼
+        Button freeWrite = rootView.findViewById(R.id.freeWrite_button);
+        freeWrite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 게시글 작성 후, 목록으로 이동
+                Toast.makeText(getContext(),"게시글을 등록하였습니다.",Toast.LENGTH_SHORT).show();
+                getFragmentManager().beginTransaction().replace(R.id.free_container, list).commit();
+            }
+        });
+
+        return rootView;
     }
 }
