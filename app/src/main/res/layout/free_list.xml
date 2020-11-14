@@ -5,7 +5,7 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".board.free.Free_list">
+    tools:context=".board.free.FreeList">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -25,7 +25,7 @@
             android:layout_gravity="right|bottom"
             android:layout_marginBottom="100dp"
             android:src="@android:drawable/ic_menu_edit"
-            card_view:backgroundTint="#FF007F"/>
+            card_view:backgroundTint="#FFA7A7"/>
 
     </FrameLayout>
 

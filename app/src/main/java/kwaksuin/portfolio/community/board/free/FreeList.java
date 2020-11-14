@@ -16,27 +16,27 @@ import java.util.List;
 
 import kwaksuin.portfolio.community.R;
 
-public class Free_list extends Fragment {
+public class FreeList extends Fragment {
     
-    private Free_write write;
+    private FreeWrite write;
     private RecyclerView recyclerView;
 
     private FreeAdapter adapter;
-    private List<Free_board> boardList;
+    private List<FreeBoard> boardList;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.free_list, container, false);
 
-        write = new Free_write();
+        write = new FreeWrite();
 
         recyclerView = rootView.findViewById(R.id.recyclerView);
         boardList = new ArrayList<>();
-        // 제목, 닉네임, 내용, 댓글 수
-        boardList.add(new Free_board("안녕하세요!","반갑습니당","천사","0"));
-        boardList.add(new Free_board("가입했어용!","친하게 지내요!","여자","6"));
-        boardList.add(new Free_board("다들 강아지 이름 뭔가용?","제 강아지 이름은 장군이에요","장군이엄마","2"));
-        boardList.add(new Free_board("심심해요","심심하네요","소년","1"));
+        // 제목, 이름, 내용, 댓글 수
+        boardList.add(new FreeBoard("안녕하세요!","천사","반갑습니당","0"));
+        boardList.add(new FreeBoard("가입했어용!","여자","친하게 지내요!","6"));
+        boardList.add(new FreeBoard("다들 강아지 이름 뭔가용?","장군이엄마","제 강아지 이름은 장군이에요","2"));
+        boardList.add(new FreeBoard("심심해요","소년","심심하네요","1"));
 
         adapter = new FreeAdapter(boardList);
         recyclerView.setAdapter(adapter);

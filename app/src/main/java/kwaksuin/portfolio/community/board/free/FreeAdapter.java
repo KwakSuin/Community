@@ -11,13 +11,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import kwaksuin.portfolio.community.R;
-import kwaksuin.portfolio.community.board.free.Free_board;
 
 public class FreeAdapter extends RecyclerView.Adapter<FreeAdapter.ViewHolder>{
 
-    private List<Free_board> boardList;
+    private List<FreeBoard> boardList;
 
-    public FreeAdapter(List<Free_board> boardList){
+    public FreeAdapter(List<FreeBoard> boardList){
         this.boardList = boardList;
     }
 
@@ -29,7 +28,7 @@ public class FreeAdapter extends RecyclerView.Adapter<FreeAdapter.ViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull FreeAdapter.ViewHolder holder, int position) {
-        Free_board data = boardList.get(position);
+        FreeBoard data = boardList.get(position);
         holder.title.setText(data.getTitle());          // 제목
         holder.name.setText(data.getName());            // 닉네임
         holder.contents.setText(data.getContents());    // 내용

@@ -16,9 +16,9 @@ import kwaksuin.portfolio.community.R;
 // 데이터와 리스트뷰를 연결해주는 역할
 public class QuestAdapter extends RecyclerView.Adapter<QuestAdapter.ViewHolder>{
 
-    private List<Quest_board> boardList;
+    private List<QuestBoard> boardList;
 
-    public QuestAdapter(List<Quest_board> boardList){
+    public QuestAdapter(List<QuestBoard> boardList){
         this.boardList = boardList;
     }
 
@@ -30,7 +30,7 @@ public class QuestAdapter extends RecyclerView.Adapter<QuestAdapter.ViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull QuestAdapter.ViewHolder holder, int position) {
-        Quest_board data = boardList.get(position);
+        QuestBoard data = boardList.get(position);
         holder.title.setText(data.getTitle());          // 제목
         holder.name.setText(data.getName());            // 닉네임
         holder.contents.setText(data.getContents());    // 내용

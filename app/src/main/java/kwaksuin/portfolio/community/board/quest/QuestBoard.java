@@ -1,16 +1,16 @@
 package kwaksuin.portfolio.community.board.quest;
 
-class Quest_board {
+class QuestBoard {
     private String review;
     private String title;
     private String contents;
     private String name;
 
-    public Quest_board(){
+    public QuestBoard(){
 
     }
 
-    public Quest_board(String review, String title, String contents, String name) {
+    public QuestBoard(String review, String title, String contents, String name) {
         this.review = review;
         this.title = title;
         this.contents = contents;

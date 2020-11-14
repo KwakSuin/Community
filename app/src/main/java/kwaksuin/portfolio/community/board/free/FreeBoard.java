@@ -1,16 +1,16 @@
 package kwaksuin.portfolio.community.board.free;
 
-class Free_board {
+class FreeBoard {
     private String title;
     private String name;
     private String contents;
     private String review;
 
-    public Free_board(){
+    public FreeBoard(){
 
     }
 
-    public Free_board(String title, String name, String contents, String review) {
+    public FreeBoard(String title, String name, String contents, String review) {
         this.title = title;
         this.name = name;
         this.contents = contents;

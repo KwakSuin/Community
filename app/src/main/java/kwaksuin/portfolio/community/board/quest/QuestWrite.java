@@ -1,7 +1,5 @@
 package kwaksuin.portfolio.community.board.quest;
 
-import android.content.Context;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -21,21 +19,18 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.zip.Inflater;
 
-import kwaksuin.portfolio.community.Category;
-import kwaksuin.portfolio.community.Login;
 import kwaksuin.portfolio.community.R;
 
-public class Quest_write extends Fragment {
+public class QuestWrite extends Fragment {
     private FirebaseFirestore store = FirebaseFirestore.getInstance();
 
     EditText questWrite_title;
     EditText questWrite_name;
     EditText questWrite_content;
 
-    Quest_list list;
-    Quest_write write;
+    QuestList list;
+    QuestWrite write;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -45,8 +40,8 @@ public class Quest_write extends Fragment {
         questWrite_content = rootView.findViewById(R.id.questWrite_contents);
         //questWrite_name = rootView.findViewById(R.id.quest_name);
 
-        list = new Quest_list();
-        write = new Quest_write();
+        list = new QuestList();
+        write = new QuestWrite();
 
 
         Button button = rootView.findViewById(R.id.questWrite_button);

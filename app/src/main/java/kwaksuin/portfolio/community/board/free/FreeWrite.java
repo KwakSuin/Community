@@ -13,15 +13,15 @@ import android.widget.Toast;
 import kwaksuin.portfolio.community.R;
 
 
-public class Free_write extends Fragment {
-    Free_list list;
+public class FreeWrite extends Fragment {
+    FreeList list;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.free_write, container, false);
 
-        list = new Free_list();
+        list = new FreeList();
 
         // 게시글 올리기 버튼
         Button freeWrite = rootView.findViewById(R.id.freeWrite_button);
