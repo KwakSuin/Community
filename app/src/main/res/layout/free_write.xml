@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".board.free.Free_write">
+
+    <EditText
+        android:id="@+id/freeWrite_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:hint="제목"
+        android:textSize="22sp"
+        android:textColor="#000000"
+        android:padding="20dp"/>
+
+
+    <EditText
+        android:id="@+id/freeWrite_contents"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/freeWrite_title"
+        android:layout_above="@+id/freeWrite_button"
+        android:gravity="left|top"
+        android:hint="내용"
+        android:textSize="22sp"
+        android:textColor="#000000"
+        android:padding="20dp"/>
+
+    <Button
+        android:id="@+id/freeWrite_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="81dp"
+        android:layout_marginRight="150dp"
+        android:layout_marginLeft="150dp"
+        android:text="올리기" />
+
+
+
+</RelativeLayout>
