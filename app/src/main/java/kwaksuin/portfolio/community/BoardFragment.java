@@ -1,8 +1,6 @@
 package kwaksuin.portfolio.community;
 
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -13,8 +11,8 @@ import android.view.ViewGroup;
 
 import com.google.android.material.tabs.TabLayout;
 
-import kwaksuin.portfolio.community.board.FreeFragment;
-import kwaksuin.portfolio.community.board.MarketFragment;
+import kwaksuin.portfolio.community.board.free.FreeFragment;
+import kwaksuin.portfolio.community.board.market.MarketFragment;
 import kwaksuin.portfolio.community.board.photo.PhotoFragment;
 import kwaksuin.portfolio.community.board.quest.QuestFragment;
 

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".board.FreeFragment">
+    tools:context=".board.free.FreeFragment">
 
     <!-- TODO: Update blank fragment layout -->
 

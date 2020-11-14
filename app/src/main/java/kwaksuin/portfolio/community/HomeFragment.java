@@ -1,21 +1,12 @@
 package kwaksuin.portfolio.community;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
-
-import kwaksuin.portfolio.community.board.FreeFragment;
-import kwaksuin.portfolio.community.board.MarketFragment;
-import kwaksuin.portfolio.community.board.photo.PhotoFragment;
-import kwaksuin.portfolio.community.board.quest.QuestFragment;
 
 public class HomeFragment extends Fragment {
     @Override
