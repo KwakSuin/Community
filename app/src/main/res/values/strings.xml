@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Communuty</string>
+    <string name="app_name">Community</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="home_fragment">"愛견"</string>
     <string name="board_fragment">"게시판"</string>
