@@ -50,7 +50,7 @@
             android:textSize="22sp" />
 
         <Button
-            android:id="@+id/localButton"
+            android:id="@+id/MarketLocalButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

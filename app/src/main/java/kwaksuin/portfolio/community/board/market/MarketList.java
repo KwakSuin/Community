@@ -23,7 +23,7 @@ public class MarketList extends Fragment {
     RecyclerView recyclerView;
     MarketAdapter adapter;
 
-    private int doubleClick = 0;
+    private int scrap = 0;
     private final long CLICK_DELAY = 250;
 
     @Override
@@ -48,27 +48,27 @@ public class MarketList extends Fragment {
         // 리사이클에 adapter 기능 넣기
         recyclerView.setAdapter(adapter);
 
-        // 인스타그램 더블 클릭 구현
+        // 찜하기 구현
         adapter.setOnItemClickListener(new OnMarketClickListener() {
             @Override
             public void onItemClick(MarketAdapter.ViewHolder holder, View view, int position) {
-                doubleClick++;
+                scrap++;
                 Handler handler = new Handler();
                 Runnable clickRunnable = new Runnable() {
                     // 한 번 클릭
                     @Override
                     public void run() {
-                        doubleClick = 0;
+                        scrap = 0;
                     }
                 };
 
-                if(doubleClick == 1){
+                if(scrap == 1){
                     handler.postDelayed(clickRunnable,CLICK_DELAY);
-                }else if(doubleClick ==2 ){
+                }else if(scrap ==2 ){
                     // 더블 클릭
-                    doubleClick=0;
+                    scrap =0;
                     Market item = (Market) adapter.getItem(position);
-                    Toast.makeText(getContext(),"좋아요!",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(),"찜",Toast.LENGTH_SHORT).show();
                 }
             }
         });
