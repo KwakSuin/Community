@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     tools:context=".board.market.MarketWrite">
 
@@ -26,8 +26,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
+            android:layout_marginLeft="20dp"
             android:hint="위치"
-            android:padding="20dp"
             android:textColor="#000000"
             android:textSize="22sp" />
 
@@ -35,6 +35,7 @@
             android:id="@+id/MarketWriteImage"
             android:layout_width="match_parent"
             android:layout_height="250dp"
+            android:layout_marginTop="10dp"
             android:src="@drawable/upload" />
 
         <EditText
@@ -48,21 +49,25 @@
             android:padding="20dp"
             android:textColor="#000000"
             android:textSize="22sp" />
+    </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
         <Button
             android:id="@+id/MarketLocalButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="위치등록"/>
+            android:text="위치등록" />
 
         <Button
             android:id="@+id/MarketWriteButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:text="올리기" />
-
     </LinearLayout>
 
-</ScrollView>
+
+</LinearLayout>

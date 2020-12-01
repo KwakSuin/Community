@@ -58,6 +58,15 @@ public class MarketWrite extends Fragment {
             }
         });
 
+        // 위치추가 버튼
+        Button localButton = rootView.findViewById(R.id.MarketLocalButton);
+        localButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
         // 사진첨부 버튼
         marketWriteImage.setOnClickListener(new View.OnClickListener() {
             @Override

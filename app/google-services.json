@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1038658475482",
+    "firebase_url": "https://community-56f36.firebaseio.com",
+    "project_id": "community-56f36",
+    "storage_bucket": "community-56f36.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1038658475482:android:8a19e61c70f6c0e9b65ce3",
+        "android_client_info": {
+          "package_name": "kwaksuin.portfolio.login"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1038658475482-bvf9bk9gdmtpelrdkjdc82hu7gthkkfs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIRvjf-A8-NCkCit5EdM4_1BA-zokyNoE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1038658475482-bvf9bk9gdmtpelrdkjdc82hu7gthkkfs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

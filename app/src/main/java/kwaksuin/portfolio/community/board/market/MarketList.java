@@ -40,10 +40,10 @@ public class MarketList extends Fragment {
         adapter = new MarketAdapter();
 
         // title, contents, local, count, images
-        adapter.addItem(new Market("배변패드 판매", "탐사 베이직 배변패드","경기도 의정부시", 7,  R.drawable.dog));
-        adapter.addItem(new Market("간식 팔아용", "굿데이 건강한육포 반려견간식 대용량 300g","서울시 강남구", 19,  R.drawable.dog02));
-        adapter.addItem(new Market("사료 남는거 팔아요!", "탐사 6free 강아지 사료 양고기 레시피","서울시 송파구", 16,  R.drawable.dog03));
-        adapter.addItem(new Market("구매했는데 안써서 팔아요ㅠㅠ", "도그아이 애견용 바베큐 봉제 장난감","강원도 강릉시", 16, R.drawable.dog04));
+        adapter.addItem(new Market("배변패드 판매", "탐사 베이직 배변패드","경기도 의정부시", 7,  R.drawable.market01));
+        adapter.addItem(new Market("간식 팔아용", "굿데이 건강한육포 반려견간식 대용량 300g","서울시 강남구", 19,  R.drawable.market02));
+        adapter.addItem(new Market("사료 남는거 팔아요!", "탐사 6free 강아지 사료 양고기 레시피","서울시 송파구", 16,  R.drawable.market03));
+        adapter.addItem(new Market("구매했는데 안써서 팔아요ㅠㅠ", "도그아이 애견용 바베큐 봉제 장난감","강원도 강릉시", 16, R.drawable.market04));
 
         // 리사이클에 adapter 기능 넣기
         recyclerView.setAdapter(adapter);
