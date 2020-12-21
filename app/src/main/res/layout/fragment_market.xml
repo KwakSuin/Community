@@ -6,9 +6,8 @@
     android:orientation="vertical"
     tools:context=".board.market.MarketFragment">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/market_container"/>
-
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/market_container"/>
 </LinearLayout>

@@ -1,43 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".board.photo.PhotoWrite">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
-        <EditText
-            android:id="@+id/photoWriteTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:hint="제목"
-            android:padding="20dp"
-            android:textColor="#000000"
-            android:textSize="22sp" />
-
-        <ImageView
-            android:id="@+id/photoWriteImage"
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:src="@drawable/upload" />
-
-        <EditText
-            android:id="@+id/photoWriteContent"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@+id/photoWriteButton"
-            android:layout_below="@+id/photoWriteTitle"
-            android:gravity="left|top"
-            android:hint="내용"
-            android:padding="20dp"
-            android:textColor="#000000"
-            android:textSize="22sp" />
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/photoWriteTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:hint="제목"
+                android:padding="20dp"
+                android:textColor="#000000"
+                android:textSize="22sp" />
+
+            <ImageView
+                android:id="@+id/photoWriteImage"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:src="@drawable/upload" />
+
+            <EditText
+                android:id="@+id/photoWriteContent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/photoWriteButton"
+                android:layout_below="@+id/photoWriteTitle"
+                android:gravity="left|top"
+                android:hint="내용"
+                android:padding="20dp"
+                android:textColor="#000000"
+                android:textSize="22sp" />
 
             <Button
                 android:id="@+id/photoWriteButton"
@@ -46,5 +50,7 @@
                 android:layout_gravity="center"
                 android:text="올리기" />
 
-    </LinearLayout>
-</ScrollView>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
