@@ -1,21 +1,30 @@
 package kwaksuin.portfolio.community.board.market;
 
+import android.Manifest;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.location.GpsStatus;
+import android.location.Location;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -41,6 +50,10 @@ public class MarketWrite extends Fragment {
     private int id_view;
     private String path;
 
+    private LocationManager locationManager;
+    private static final int REQUEST_CODE_LOCATION = 2;
+    String TAG = "";
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -60,11 +73,20 @@ public class MarketWrite extends Fragment {
             }
         });
 
+        TextView local =rootView.findViewById(R.id.MarketLocal);
         // 위치추가 버튼
         Button localButton = rootView.findViewById(R.id.MarketLocalButton);
         localButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                locationManager = (LocationManager)getContext().getSystemService(Context.LOCATION_SERVICE);
+                //사용자의 현재 위치
+                Location userLocation = getMyLocation();
+                if( userLocation != null ) {
+                    double latitude = userLocation.getLatitude();
+                    double longitude = userLocation.getLongitude();
+                    Log.i(TAG,"현재 내 위치값 : "+latitude+", "+longitude);
+                }
 
             }
         });
@@ -100,6 +122,25 @@ public class MarketWrite extends Fragment {
             }
         });
         return rootView;
+    }
+
+    // 위치 가져오기
+    private Location getMyLocation() {
+        Location currentLocation = null;
+        if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            //System.out.println("사용자에게 권한을 요청해야함");
+            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, this.REQUEST_CODE_LOCATION);
+        }
+        else {
+            // 수동으로 위치 구하기
+            String locationProvider = LocationManager.GPS_PROVIDER;
+            currentLocation = locationManager.getLastKnownLocation(locationProvider);
+            if (currentLocation != null) {
+                double lng = currentLocation.getLongitude();
+                double lat = currentLocation.getLatitude();
+            }
+        }
+        return currentLocation;
     }
 
     // 앨범에서 이미지 가져오기

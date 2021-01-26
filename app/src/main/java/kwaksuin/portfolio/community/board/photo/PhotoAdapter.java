@@ -78,7 +78,6 @@ class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.ViewHolder>
         public ViewHolder(View itemView, final OnPhotoClickListener listener) {
             super(itemView);
 
-
             PhotoTitle = itemView.findViewById(R.id.Phototitle);
             PhotoDate = itemView.findViewById(R.id.Photodate);
             Content = itemView.findViewById(R.id.content);
